@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+{#定义个人主页母板  侧边栏 分类便签等 右边栏用块隔开需要时添加 {% block  'exercise' %} 内容 {% endblock %}#}
+<html lang="zh-CH">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/sweetalert.css">
+    <link rel="stylesheet" href="/static/assets/style/first.css">
+
+    <style>
+        {#.classify-content-1:hover {#}
+        {#background: rgb(182, 181, 181);#}
+        {#cursor: pointer;#}
+        {# } #}
+    </style>
+
+</head>
+<body>
+{#插入导航条组件#}
+{% include 'navigate_templates.html' %}
+{#插入个人主页标题头#}
+{#{% block head %}#}
+{##}
+{#{% endblock %}#}
+
+<header class="header-1" style="height: 760px; background: url('/static/figs/figure3.png') 0px 0px">
+    <div class="header-content">
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <h1 style="color: white">{{ user_obj.username }}</h1>
+        <p class="h-text" style="color: white"> 生信之家 </p>
+    </div>
+</header>
+
+{#划分个人主页分区 3 - 7#}
+{#<div class="row">#}
+{#规划左边栏 3#}
+{#    <div class="col-xs-3 col-sm-3">#}
+{#        <div class="panel panel-warning">#}
+{#            <div class="panel-heading">文章分类</div>#}
+{#            <div class="panel-body">#}
+{#                {% for cate in category %}#}
+{#                    <div>#}
+{#                        <a href="">{{ cate.title }}({{ cate.c }})</a>#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{##}
+{#        <div class="panel panel-success">#}
+{#            <div class="panel-heading">时间归档</div>#}
+{#            <div class="panel-body">#}
+{#                {% for dat in date %}#}
+{#                    <a href="">{{ dat.c }}({{ dat.con }})</a>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+{#规划右边栏 7#}
+{#    <div class="col-xs-7 col-sm-7">#}
+{#        {% block content %}#}
+{#        {% endblock %}#}
+{#    </div>#}
+{#</div>#}
+
+<section class="Sec-1">
+
+    <div class="left">
+        <div class="person card">
+
+            {#            <div class="photo">#}
+            {#                <img class="media-object" src="/media/{{ user_obj.avatar }}" alt="">#}
+            {#            </div>#}
+
+            <div class="col-imgMark"
+                 style="height: 200px; width: 200px; margin: auto; border-radius: 50%; overflow: hidden;">
+                <a class="col-img a1">
+                    {#                    <img class="media-object" src="/media/{{ user_obj.avatar }}" alt="..."#}
+                    {#                         style="height: 200px ;width: 200px;" id="id_img2">#}
+                    <label for="id_img">
+                        <img class="media-object" id="idimg" src="/media/{{ user_obj.avatar }}" alt=""
+                             style="height: 200px ;width: 200px;">
+                        <input type="file" accept="image/*" id="id_img" style="display: none">
+                    </label>
+                </a>
+            </div>
+
+            <div class="name">
+                {#                <img class="label-img" src="./img/星星.png" alt="">#}
+                <h2>{{ user_obj.username }}</h2>
+            </div>
+
+            {#            <div class="num">#}
+            {#                <div class="num-1">#}
+            {#                    <p>文章</p>#}
+            {#                    <p>{{ user_obj.a }}</p>#}
+            {#                </div>#}
+            {#                <div class="num-1">#}
+            {#                    <p>分类</p>#}
+            {#                    <p>{{ user_obj.create_time }}</p>#}
+            {#                </div>#}
+            {#            </div>#}
+            <div class="num">
+                <div class="num-1">
+                    <p><b>文章</b></p>
+                    <p>{{ user_obj.a }}</p>
+                </div>
+                <div class="num-1">
+                    <p><b>From</b></p>
+                    <p>{{ ct }}</p>
+                </div>
+            </div>
+            <div class="github">
+                <p style="margin: 0px 0px;"><b>Welcome to my blog!</b></p>
+            </div>
+            <div class="icon">
+                <img src="./img/GitHub-black.png" alt="">
+                <img src="./img/信息.png" alt="">
+                <img src="./img/qq.png" alt="">
+                <img src="./img/微信.png" alt="">
+            </div>
+
+        </div>
+
+
+        {#        <div class="board card">#}
+        {#            <img src="./img/喇叭.png" alt="">#}
+        {#            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>#}
+        {#        </div>#}
+
+        <div class="classify card">
+            <div class="classify-title">
+                <img class="label-img" src="/static/figs/file.png" alt="" style="margin-right: 5px;">
+                <p style="margin-bottom: 0px"><b>文章分类</b></p>
+            </div>
+            <div class="classify-content">
+
+                {% for cate in category %}
+                    <div class="classify-content-1">
+                        <p><a href="">{{ cate.title }}</a></p>
+                        <p><a href="">{{ cate.c }}</a></p>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="classify card">
+            <div class="classify-title">
+                <img class="label-img" src="/static/figs/time.png" alt="" style="margin-right: 5px;">
+                <p style="margin-bottom: 0px"><b>时间归档</b></p>
+                <!-- <img class="label-img" src="./img/右箭头.png" alt="" style="margin-left: 183px;"> -->
+            </div>
+            <div class="classify-content">
+                {% for dat in date %}
+                    <div class="classify-content-1">
+                        <p><a href="">{{ dat.c }}</a></p>
+                        <p><a href="">{{ dat.con }}</a></p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {#    中间规划8#}
+    <div class="right">
+        {% for art in article_obj %}
+            <div class="col col-1 right-scroll">
+
+                {#                <div class="col-imgMark" style="width: 285px;">#}
+                {#                    <a class="col-img a1" href="/templates/onself.html">#}
+                {#                        <img class="media-object" src="/media/{{ art.user.avatar }}" alt="..."#}
+                {#                             style="height: 200px ;width: 200px">#}
+                {#                    </a>#}
+                {#                </div>#}
+
+                <div class="text-2">
+                    <h2><a href="/bbs/{{ art.user.username }}/{{ art.articledetail.aid }}">{{ art.title }}</a></h2>
+                    <div class="date">
+                        <img src="/static/assets/figs/日期.png" alt=""
+                             style="width: 19px;height: 19px;margin-right: 5px;">
+                        <p style="margin-bottom: 0px">发布于：&nbsp;&nbsp;{{ art.create_time|date:"Y-m-d H:i" }}</p>
+                        <div class="line">
+                        </div>
+                        <p style="margin-bottom: 0px"> {{ art.category.title }} </p>
+                    </div>
+                    <div class="Lrem">
+                        <p>{{ art.desc }}</p>
+                    </div>
+
+                    <div class="Lrem" style="height: 10px">
+                    </div>
+
+                    <div class="small pub_info">
+                        {#                        <span><a href="/{{ art.user.username }}/">{{ art.user.username }}</a></span> &nbsp;&nbsp;&nbsp;#}
+                        {#                    <span>发布于 &nbsp;&nbsp;{{ art.create_time|date:"Y-m-d H:i" }}</span>&nbsp;&nbsp;#}
+                        <span class="glyphicon glyphicon-comment"></span>评论({{ art.comment_count }})&nbsp;&nbsp;
+                        <span class="glyphicon glyphicon-thumbs-up"></span>点赞({{ art.up_count }})&nbsp;&nbsp;
+                    </div>
+
+                    {% if user_obj.username == request.user.username %}
+                        <div class="row">
+                            {#插入编辑删除按钮#}
+                            <form action="/edit_article/" method="post">
+                                {% csrf_token %}
+                                <input type="text" class="edit_article " style="display: none " name="edit_article_id"
+                                       value="{{ art.aid }}">
+                                <input type="submit" name="button" value="编辑"
+                                       class="btn btn-link btn-sm col-sm-2 col-sm-offset-8" style="padding: 0px">
+                            </form>
+                            <span><button class="btn btn-link btn-sm delete_article col-sm-2" style="padding: 0px"
+                                          delete_article_id="{{ art.aid }}">删除</button></span>
+                        </div>
+                        <div class="row" style="height: 15px">
+                        </div>
+                    {% endif %}
+
+                </div>
+
+
+            </div>
+        {% endfor %}
+
+        <div style="height: 30px">
+        </div>
+    </div>
+</section>
+
+
+<script src="/static/jquery-3.3.1.js"></script>
+<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="/static/sweetalert.min.js"></script>
+<script src="/static/AjaxPostPatch.js"></script>
+
+<style>
+    {#    导航条与主页标题间距#}
+    .navbar {
+        margin-bottom: 0;
+    }
+</style>
+<script>
+    $(".edit_article").on("click", function () {
+        $.ajax({
+            url: '/edit_article/',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                edit_article_id: $(this).attr("edit_article_id")
+            },
+            success: function (data) {
+                alert(data)
+            }
+        })
+    });
+    $(".delete_article").on("click", function () {
+        $.ajax({
+            url: '/delete_article/',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                delete_article_id: $(this).attr("delete_article_id")
+            },
+            success: function (data) {
+                if (data.state == 0) {
+                    alert('删除成功');
+                    location.reload()
+                } else {
+                    alert("操作失败")
+                }
+            }
+        })
+    })
+
+
+    $("#id_img").on("change", function () {
+        console.log("clickkk")
+        var fileReader = new FileReader();
+        console.log(this.files[0]);
+        fileReader.readAsDataURL(this.files[0]);
+        fileReader.onload = function () {
+            $("#idimg").attr("src", fileReader.result)
+        }
+
+        //$("#enrol").on("click", function () {
+        var formData = new FormData();
+        formData.append("avatar", $("#id_img")[0].files[0]);
+        console.log("aaaaaa")
+        console.log($("#id_img")[0])
+        console.log($("#id_img")[0].files[0])
+        $.ajax({
+            url: "/bbs/{{ user_obj.username}}/avater",
+            type: 'post',
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            data: formData,
+            success: function (data) {
+                console.log(data)
+                console.log("bbbbbbb")
+                var dat = data;
+                if (dat.mode === 1) {
+                    alert("更换成功");
+                    location.href = "/login/"
+                } else if (dat.mode === 2) {
+                    alert("无权限修改");
+                    location.href = "/bbs/{{ user_obj.username}}"
+                } else {
+                    alert("更换失败");
+                    location.href = "/login/"
+                }
+
+            }
+        })
+        //});
+    });
+
+
+</script>
+</body>
+</html>

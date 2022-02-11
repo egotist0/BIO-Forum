@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>生信之家</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/sweetalert.css">
+    <link rel="stylesheet" href="/static/assets/style/first.css">
+    {#    <link rel="stylesheet" href="/static/assets/style/login_style.css">#}
+
+    <style>
+        body {
+            background-color: #eeeeee
+        }
+
+        .pub_info {
+            margin-top: 10px;
+        }
+
+        .pub_info .glyphicon-comment {
+            vertical-align: -1px;
+        }
+
+        #ybh_footer {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        {#background-color: #7e8484;#} background-image: url("/static/figs/figure4.png");
+            background-position: 50px -70px;
+        }
+
+        #ybh_footer p {
+            color: white;
+            font-weight: 400;
+            text-align: center;
+            line-height: 30px;
+            z-index: 10;
+        }
+
+        .bg-2 {
+            background-image: url(/static/figs/bg-1.png);
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: bottom;
+            position: fixed;
+            opacity: 0.5;
+            z-index: -10;
+        }
+
+    </style>
+</head>
+
+<body>
+
+{#导入导航框#}
+{% include 'navigate_templates.html' %}
+
+{#规划首页页面 2 - 8 - 2#}
+
+{#<div class="row">#}
+
+<div class="bg-2"></div>
+
+<header class="header-1" style="height: 600px; background: url('/static/figs/figure3.png') 0px 0px">
+    <div class="header-content">
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <h1 style="color: white">生信之家</h1>
+        <p class="h-text" style="color: white"> 最温暖的生信社区, 欢迎你的到来。</p>
+    </div>
+</header>
+<br/>
+
+<section class="Sec-1">
+    {#    <div>#}
+    {#        <div style="background-image: url('/assets/figs/asoul.jpg')"></div>#}
+    {#    </div>#}
+
+    {#    左侧规划2#}
+    {#    <div class="col-xs-2 col-sm-2">#}
+    {#        <div class="panel panel-primary">#}
+    {#            <div class="panel-heading">欢迎来到生信之家</div>#}
+    {#            <div class="panel-body">#}
+    {#                这里是提供给所有生信与生统领域的朋友交流的论坛#}
+    {#            </div>#}
+    {#        </div>#}
+    {#        <div class="panel panel-primary">#}
+    {#            <div class="panel-heading">待修改</div>#}
+    {#            <div class="panel-body">#}
+    {#                待修改#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+
+    {# ----------------#}
+
+    <div class="left">
+        <div class="person card">
+            {#            <div class="photo">#}
+            {#                <img src="./img/头像.png" alt="">#}
+            {#            </div>#}
+            <div class="name">
+                {#                <img class="label-img" src="./img/星星.png" alt="">#}
+                <h2>公告</h2>
+            </div>
+
+            <div style="font-size: bold; text-align: center;">
+                <p style="margin-bottom: 10px"><b>生信之家是提供给生信人的论坛</b></p>
+                <p style="margin-bottom: 10px"><b>在这里,你可以</b></p>
+                <p style="margin-bottom: 3px"><b>交流技术细节, 结交志同道合的朋友;</b></p>
+                <p style="margin-bottom: 15px"><b>查询学术论文, 使用生物信息学工具.</b></p>
+                <p style="margin-bottom: 0px"><b>祝你玩的愉快!</b></p>
+            </div>
+            <br>
+            <a href="http://127.0.0.1:8000/login/?#" style="text-decoration: none">
+                <div class="github">
+                    <img class="label-img" src="../static/figs/join_white.png" alt="">
+                    <p style="margin-bottom: 0px"><b>加入我们</b></p>
+                </div>
+            </a>
+            <div class="icon">
+                <img src="./img/GitHub-black.png" alt="">
+                <img src="./img/信息.png" alt="">
+                <img src="./img/qq.png" alt="">
+                <img src="./img/微信.png" alt="">
+            </div>
+        </div>
+        <div class="board card">
+            <p style="visibility: hidden">s</p>
+            <img src="../static/figs/trump.png" alt="">
+            <p style="max-width: 245px; margin-bottom: 0px"> 请大家不要发带有侮辱性质的帖子 </p>
+        </div>
+        {#        <div class="text card">#}
+        {#            <h1>最热文章</h1>#}
+        {#            {% for art in article_obj %}#}
+        {#            <a class="text-col" href="./html/text.html">#}
+        {#                <img src="/media/{{ art.user.avatar }}" alt="">#}
+        {#                <div class="text-col-1">#}
+        {#                    <p>{{ art.title }}</p>#}
+        {#                    <p>{{ art.create_time|date:"Y-m-d" }}</p>#}
+        {#                </div>#}
+        {#            </a>#}
+        {#            {% endfor %}#}
+        {#        </div>#}
+        {#        <div class="classify card">#}
+        {#            <div class="classify-title">#}
+        {#                <img class="label-img" src="./img/分类gray.png" alt="" style="margin-right: 5px;">#}
+        {#                <p>分类</p>#}
+        {#                <!-- <img class="label-img" src="./img/右箭头.png" alt="" style="margin-left: 183px;"> -->#}
+        {#            </div>#}
+        {#            <div class="classify-content">#}
+        {#                <div class="classify-content-1">#}
+        {#                    <p>CSS</p>#}
+        {#                    <p>0</p>#}
+        {#                </div>#}
+        {#                <div class="classify-content-1">#}
+        {#                    <p>CSS 布局</p>#}
+        {#                    <p>0</p>#}
+        {#                </div>#}
+        {#                <div class="classify-content-1">#}
+        {#                    <p>Git</p>#}
+        {#                    <p>0</p>#}
+        {#                </div>#}
+        {#                <div class="classify-content-1">#}
+        {#                    <p>HEXO</p>#}
+        {#                    <p>0</p>#}
+        {#                </div>#}
+        {#                <div class="classify-content-1">#}
+        {#                    <p>HTTP 网络请求</p>#}
+        {#                    <p>0</p>#}
+        {#                </div>#}
+        {#                <div class="classify-content-1">#}
+        {#                    <p>JAVA</p>#}
+        {#                    <p>0</p>#}
+        {#                </div>#}
+        {#                <div class="classify-content-1">#}
+        {#                    <p>JavaScript</p>#}
+        {#                    <p>1</p>#}
+        {#                </div>#}
+        {#                <div class="classify-content-1">#}
+        {#                    <p>Ajax</p>#}
+        {#                    <p>0</p>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#        </div>#}
+        <div class="person card">
+            <h2 align="center">本周之星</h2>
+
+            <div class="col-imgMark"
+                 style="height: 200px; width: 200px; margin: auto; border-radius: 50%; overflow: hidden;">
+                <a class="col-img a1" href="http://127.0.0.1:8000/bbs/sjtugrc">
+                    {#                    <img class="media-object" src="/media/{{ user_obj.avatar }}" alt="..."#}
+                    {#                         style="height: 200px ;width: 200px;" id="id_img2">#}
+                    <label for="id_img">
+                        <img class="media-object" id="idimg" src="/media/photo/kedaya.jpeg" alt=""
+                             style="height: 200px ;width: 200px;">
+                    </label>
+                </a>
+            </div>
+            <div class="name">
+                {#                <img class="label-img" src="./img/星星.png" alt="">#}
+                <h2>sjtugrc</h2>
+            </div>
+            <div class="num">
+                <div class="num-1">
+                    <p><b>文章</b></p>
+                    <p>2</p>
+                </div>
+                <div class="num-1">
+                    <p><b>From</b></p>
+                    <p>2022-01-14</p>
+                </div>
+            </div>
+            <p align="center"><b>最热文章</b></p>
+            <div style="font-size: bold; text-align: center;">
+                <a href="http://127.0.0.1:8000/bbs/sjtugrc/11"><p style="text-decoration: none"><b>序列比对简介</b></p></a>
+            </div>
+        </div>
+    </div>
+
+    {#    中间规划8#}
+    <div class="right">
+        {#        <div class="col-xs-8 col-sm-8">#}
+        {#    循环文章表把文章展示出来#}
+        {#        {% for art in article_obj %}#}
+        {#            <div style="margin-bottom: 30px">#}
+        {#                <div class="media">#}
+        {#                    <div class="media-left">#}
+        {#                        <a href="">#}
+        {#                            <img class="media-object" src="/media/{{ art.user.avatar }}" alt="..."#}
+        {#                                 style="height: 80px ;width: 80px">#}
+        {#                        </a>#}
+        {#                    </div>#}
+        {#                    <div class="media-body">#}
+        {# 列出标题和简介 #}
+        {#                        <h4 class="media-heading"><a#}
+        {#                                href="/bbs/{{ art.user.username }}/{{ art.articledetail.aid }}">{{ art.title }}</a></h4>#}
+        {#                        <p>&nbsp;&nbsp;{{ art.desc }}</p>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {# 列出文章下面信息 #}
+        {#                <div class="small pub_info">#}
+        {#                    <span><a href="/{{ art.user.username }}/">{{ art.user.username }}</a></span> &nbsp;&nbsp;&nbsp;#}
+        {#                    <span>发布于 &nbsp;&nbsp;{{ art.create_time|date:"Y-m-d H:i" }}</span>&nbsp;&nbsp;#}
+        {#                    <span class="glyphicon glyphicon-comment"></span>评论({{ art.comment_count }})&nbsp;&nbsp;#}
+        {#                    <span class="glyphicon glyphicon-thumbs-up"></span>点赞({{ art.up_count }})&nbsp;&nbsp;#}
+        {#                </div>#}
+        {##}
+        {#            </div>#}
+        {##}
+        {#        {% endfor %}#}
+
+        {% for art in article_obj %}
+            <div class="col col-1 right-scroll" style="height: 200px">
+
+                <div class="col-imgMark" style="width: 285px;">
+                    <a class="col-img a1" href="/templates/onself.html">
+                        <img class="media-object" src="/media/{{ art.user.avatar }}" alt="..."
+                             style="height: 200px ;width: 200px">
+                    </a>
+                </div>
+
+                {#                <div class="col-imgMark" style="width: 50px">#}
+                {#                </div>#}
+
+                <div class="text-2">
+                    <h2><a href="/bbs/{{ art.user.username }}/{{ art.articledetail.aid }}">{{ art.title }}</a></h2>
+                    <div class="date">
+                        <img src="/static/assets/figs/日期.png" alt=""
+                             style="width: 19px;height: 19px;margin-right: 5px;">
+                        <p style="margin-bottom: 0px">发布于：&nbsp;&nbsp;{{ art.create_time|date:"Y-m-d H:i" }}</p>
+                        <div class="line">
+                        </div>
+                        <p style="margin-bottom: 0px"> {{ art.category.title }} </p>
+                    </div>
+                    <div class="Lrem">
+                        <p>&nbsp;&nbsp;{{ art.desc }}</p>
+                    </div>
+
+                    <div class="Lrem" style="height: 10px">
+                    </div>
+
+                    <div class="small pub_info">
+                        <span><a href="/{{ art.user.username }}/">{{ art.user.username }}</a></span> &nbsp;&nbsp;&nbsp;
+                        {#                    <span>发布于 &nbsp;&nbsp;{{ art.create_time|date:"Y-m-d H:i" }}</span>&nbsp;&nbsp;#}
+                        <span class="glyphicon glyphicon-comment"></span>评论({{ art.comment_count }})&nbsp;&nbsp;
+                        <span class="glyphicon glyphicon-thumbs-up"></span>点赞({{ art.up_count }})&nbsp;&nbsp;
+                    </div>
+                </div>
+
+                <div class="col-imgMark" style="width: 20px">
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+        {#        <div class="col col-1 right-scroll" style="height: 250px">#}
+        {##}
+        {#            <div class="col-imgMark">#}
+        {#                <a class="col-img a1" href="/templates/onself.html">#}
+        {#                    <img src="/static/assets/figs/2-textImg.png" alt="" style="height: 320px;width: 300px">#}
+        {#                </a>#}
+        {#            </div>#}
+        {##}
+        {#            <div class="col-imgMark" style="width: 50px">#}
+        {#            </div>#}
+        {##}
+        {#            <div class="text-2">#}
+        {#                <a href="./html/01text.html"><h1>数据代理</h1></a>#}
+        {#                <div class="date">#}
+        {#                    <img src="/static/assets/figs/日期.png" alt=""#}
+        {#                         style="width: 19px;height: 19px;margin-right: 5px;">#}
+        {#                    <p>发布于：2021-09-01</p>#}
+        {#                    <div class="line"></div>#}
+        {#                    <p>JavaScript</p>#}
+        {#                    <div class="line"></div>#}
+        {#                    <p>ES6</p>#}
+        {#                </div>#}
+        {#                <div class="Lrem">Object.defineProperty() 方法会直接在一个对象上定义一个新属性，#}
+        {#                    或者修改一个对象的现有属性，并返回此对象。#}
+        {#                    语法：Object.defineProperty(obj, prop, descriptor)#}
+        {#                </div>#}
+        {#            </div>#}
+        {##}
+        {#            <div class="col-imgMark" style="width: 20px">#}
+        {#            </div>#}
+        {#        </div>#}
+
+        <div style="height: 30px">
+        </div>
+
+        {#        </div>#}
+    </div>
+
+    {#    右侧规划2#}
+    {#<div class="col-xs-2 col-sm-2">#}
+    {#    <div class="panel panel-primary">#}
+    {#        <div class="panel-heading">待修改</div>#}
+    {#        <div class="panel-body">#}
+    {#            待修改#}
+    {#        </div>#}
+    {#    </div>#}
+    {#    <div class="panel panel-primary">#}
+    {#        <div class="panel-heading">待修改</div>#}
+    {#        <div class="panel-body">#}
+    {#            待修改#}
+    {#        </div>#}
+    {#    </div>#}
+    {#</div>#}
+
+
+</section>
+
+<footer>
+    <div id="ybh_footer">
+        <p>@2021-2022 姜戈 颜秉浩 顾睿初</p>
+        <p>Bioinformatics | 生信之家</p>
+        <p>亲爱的你, 欢迎来到温暖的生信之家!</p>
+    </div>
+</footer>
+
+<script src="/static/jquery-3.3.1.js"></script>
+<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="/static/sweetalert.min.js"></script>
+<script src="/static/AjaxPostPatch.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/static/assets/script/blog.js"></script>
+<script src="/static/assets/script/scroll.js"></script>
+{#<script>#}
+{#    var nav1 = document.getElementsByClassName("navbar navbar-default")[0]#}
+{#    nav1.setAttribute("style","margin-bottom: 0px")#}
+{#</script>#}
+</body>
+</html>

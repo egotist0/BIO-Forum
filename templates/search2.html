@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="shortcut icon" href="#"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/assets/search/search.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.css">
+    {#    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">#}
+    <style>
+        #container {
+            margin: 0px auto;
+            max-width: 150px;
+            text-align: center;
+            color: whitesmoke;
+        }
+
+        #search_type1 {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            border: 1px solid whitesmoke;
+            -moz-border-radius: 0.2em;
+            -webkit-border-radius: 0.2em;
+            border-radius: 0.2em;
+            {#-webkit-appearance: none;#}
+            {#-moz-appearance: none;#}
+            {#appearance: none;#}
+            background: whitesmoke;
+            {#font-family: SimHei;#}
+            font-size: bold;
+            color: black;
+            {#cursor: pointer;#}
+        }
+
+
+    </style>
+    <script src="../static/assets/search/jquery3.5.1.js"></script>
+    <script src="../static/assets/search/cookie.js"></script>
+
+    <title>搜索</title>
+    <script>
+
+    </script>
+</head>
+<body>
+<div class="mark"></div>
+{#{% include 'navigate_templates.html' %}#}
+<nav class="nav">
+    <a class="navbar-brand" href="/home"><i class="fa fa-chrome fa-lg" aria-hidden="true"></i>&nbsp;生信之家</a>
+    {#        <h1 class="logo">生信之家</h1>#}
+
+
+    {#        <ul class="nav navbar-nav">#}
+    {#            <li><a href="/home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;首页</a></li>#}
+    {#            <li><a href="/search"><i class="fa fa-star-half-o" aria-hidden="true"></i>&nbsp;论文检索</a></li>#}
+    {#            <li><a href="/search"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;帖子检索</a></li>#}
+    {#            <li><a href="/home"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;工具</a></li>#}
+    {#        </ul>#}
+
+    <ul class="nav_1">
+        <li><img src="../static/figs/search_white.png"> <a href="./search.html"
+                                                     style="color: grey; position: relative; top: -2px">论文检索</a>
+            <div class="n-line"></div>
+        </li>
+        <li><img src="../static/figs/wrench.png"> <a href="./search.html"
+                                                     style="color: grey; position: relative; top: -2px">工具</a>
+            <div class="n-line"></div>
+        </li>
+        <li><img src="../static/figs/add-bold.png"> <a href="/create_article/"
+                                                       style="color: grey; position: relative; top: -2px">新增博客</a>
+            <div class="n-line"></div>
+        </li>
+        <li><img src="../static/figs/home.png"> <a href="/bbs/{{ request.user.username }}"
+                                                   style="color: grey; position: relative; top: -2px">个人主页</a>
+            <div class="n-line"></div>
+        </li>
+    </ul>
+    <img class="menu" src="../img/分类.png" alt="" style="width: 25px; height: 25px;">
+</nav>
+<header>
+    {#    {% include 'navigate_templates.html' %}#}
+    <div class="container">
+        <div class="time"><span class="hour">00</span><span>:</span><span class="minutes">00</span></div>
+
+        <div class="Search">
+            <input class="Input" type="text" id="search1" placeholder="Type to search">
+            <p style="visibility: hidden">a</p>
+
+            <div class="select_container">
+                <select name="search_type" id="search_type1">
+                    <option value="author">作者</option>
+                    <option value="key">关键字</option>
+                </select>
+            </div>
+
+            <div class="searchImg" id="jg111" title="搜索">
+                <img src="../static/figs/search.png" alt="">
+            </div>
+        </div>
+
+        <div class="Menu">
+            <img class="None" src="../static/figs/close.png" alt="">
+            <h1>M</h1>
+            <div class="row">
+                <div class="col" title="背景图片">
+                    <a href="https://www.ncbi.nlm.nih.gov/">
+                        <div class="bgImg" style="display: flex;justify-content: center;align-items: center;background-color: rgba(255, 255, 255, 0.1);
+                        box-shadow:20px 20px 50px rgba(0,0,0,.5); ">
+                            <img src="../static/figs/ncbi.jpg" alt="">
+                        </div>
+                    </a>
+                    <p style="color: #444444">NCBI</p>
+
+                </div>
+                <div class="col" title="搜索引擎">
+                    <a href="https://www.embl.org/">
+                        <div class="bgImg" style="display: flex;justify-content: center;align-items: center;background-color: rgba(255, 255, 255, 0.1);
+                        box-shadow:20px 20px 50px rgba(0,0,0,.5);">
+                            <img src="../static/figs/embl.jpeg" style="width: 60%;height: 60%;">
+                        </div>
+                    </a>
+                    <p style="color: #444444">EMBL</p>
+
+                </div>
+                <div class="col" title="bilibili">
+                    <a href="https://www.kegg.jp/">
+                        <div class="bgImg" class="bgImg" style="display: flex;justify-content: center;align-items: center;background-color: rgba(255, 255, 255, 0.1);
+                        box-shadow:20px 20px 50px rgba(0,0,0,.5);">
+                            <img src="../static/figs/kegg.jpeg" alt="">
+                        </div>
+                    </a>
+                    <p style="color: #444444">KEGG</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="big-Img">
+            <img class="cha" src="../img/search/刀叉.png" title="取消">
+            <h3 class="oh3">我的背景图片</h3>
+            <div class="line"></div>
+            <div class="bg-container">
+            </div>
+        </div>
+
+        <div class="switch">
+            <img src="../img/search/刀叉.png" class="cha" title="取消">
+            <h3>搜索引擎</h3>
+            <div class="line"></div>
+            <div class="switch-container">
+                <div class="souImg sou-1">
+                    <img src="../img/search/soubg-1.png" alt="">
+                    <p>必应</p>
+                </div>
+                <div class="souImg sou-2">
+                    <img src="../img/search/soubg-2.png" alt="">
+                    <p>百度</p>
+                </div>
+                <div class="souImg sou-3">
+                    <img src="../img/search/soubg-3.png" alt="">
+                    <p>搜狗</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script src="../static/assets/search/startMove.js"></script>
+<script src="../static/assets/search/search.js"></script>
+
+<script>
+    $("#jg111").on("click", function () {
+        console.log("asasasas")
+        SearchContent = document.getElementById("search1")
+        SearchType = document.getElementById("search_type1")
+        data = ["none","none"]
+        if(SearchType==="author"){
+            data[1] = SearchContent.value
+        }else{
+            data[2] = SearchContent.value
+        }
+
+        $.ajax({
+            url: "/outcome/",
+            type: 'get',
+            dataType: "json",
+            data: {
+                "key": data[1],
+                "author": data[2]
+            },
+            success: function (data) {
+                var dat = data;
+                {#如果mode === 1 为登录成功返回主页#}
+                if (dat.mode === 1) {
+                    alert("登录成功");
+                    location.href = "/home/"
+                } else if (dat.mode === 0) {
+                    {#如果mode为0则为密码不正确#}
+                    $("#id_username,#id_password").parent().addClass("has-error");
+                    var $d1 = document.createElement("span");
+                    $($d1).text(dat.data);
+                    $($d1).attr("class", "text-danger");
+                    $($d1).insertAfter($("#id_password"))
+
+                } else if (dat.mode === 2) {
+                    {#如果mode为2则验证不通过#}
+                    $("#id_username,#id_password").parent().addClass("has-error");
+                    $.each(dat.errors, function (k, v) {
+                        $("#id_" + k).next("span").text(v[0])
+                    });
+
+
+                }
+            }
+        })
+    })
+</script>
+
+</body>
+</body>
+</html>

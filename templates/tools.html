@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>工具</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/sweetalert.css">
+    <link rel="stylesheet" href="/static/assets/style/first.css">
+    {#    <link rel="stylesheet" href="/static/assets/style/login_style.css">#}
+
+    <style>
+        body {
+            background-color: #eeeeee
+        }
+
+        .pub_info {
+            margin-top: 10px;
+        }
+
+        .pub_info .glyphicon-comment {
+            vertical-align: -1px;
+        }
+
+        #ybh_footer {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        {#background-color: #7e8484;#} background-image: url("/static/figs/figure4.png");
+            background-position: 50px -70px;
+        }
+
+        #ybh_footer p {
+            color: white;
+            font-weight: 400;
+            text-align: center;
+            line-height: 30px;
+            z-index: 10;
+        }
+
+        .bg-2 {
+            background-image: url(/static/figs/bg-1.png);
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: bottom;
+            position: fixed;
+            opacity: 0.5;
+            z-index: -10;
+        }
+
+    </style>
+</head>
+
+<body>
+
+{#导入导航框#}
+{% include './navigate_templates.html' %}
+
+{#规划首页页面 2 - 8 - 2#}
+
+{#<div class="row">#}
+
+<div class="bg-2"></div>
+
+<header class="header-1" style="height: 600px; background: url('/static/figs/figure3.png') 0px 0px">
+    <div class="header-content">
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <h1 style="color: white">生信之家</h1>
+        <p class="h-text" style="color: white"> 最温暖的生信社区, 欢迎你的到来。</p>
+    </div>
+</header>
+<br/>
+
+<section class="Sec-1">
+    {#    <div>#}
+    {#        <div style="background-image: url('/assets/figs/asoul.jpg')"></div>#}
+    {#    </div>#}
+
+    {#    左侧规划2#}
+    {#    <div class="col-xs-2 col-sm-2">#}
+    {#        <div class="panel panel-primary">#}
+    {#            <div class="panel-heading">欢迎来到生信之家</div>#}
+    {#            <div class="panel-body">#}
+    {#                这里是提供给所有生信与生统领域的朋友交流的论坛#}
+    {#            </div>#}
+    {#        </div>#}
+    {#        <div class="panel panel-primary">#}
+    {#            <div class="panel-heading">待修改</div>#}
+    {#            <div class="panel-body">#}
+    {#                待修改#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+
+    {# ----------------#}
+
+        <div class="left">
+            <div class="person card">
+{#                <div class="photo">#}
+{#                    <img src="./img/头像.png" alt="">#}
+{#                </div>#}
+                <div class="name">
+{#                    <img class="label-img" src="./img/星星.png" alt="">#}
+                    <h2>生信之家 工具</h2>
+                </div>
+                <div class="num">
+                    <div class="num-1">
+                        <p>工具</p>
+                        <p id="passage">5</p>
+                    </div>
+                    <div class="num-1">
+                        <p>分类</p>
+                        <p id="type">3</p>
+                    </div>
+                </div>
+
+                <div style="font-size: bold; text-align: center;">
+                        <p style="margin-bottom: 10px"><b>生信之家整合了常用的生信工具</b></p>
+                        <p style="margin-bottom: 10px"><b>放手使用吧!</b></p>
+                </div>
+                <br>
+                <a href="http://127.0.0.1:8000/login/?#" style="text-decoration: none">
+                    <div class="github">
+                        <img class="label-img" src="../static/figs/join_white.png" alt="">
+                        <p style="margin-bottom: 0px"><b>欢迎查询/使用工具!</b></p>
+                    </div>
+                </a>
+                <div class="icon">
+                    <img src="./img/GitHub-black.png" alt="">
+                    <img src="./img/信息.png" alt="">
+                    <img src="./img/qq.png" alt="">
+                    <img src="./img/微信.png" alt="">
+                </div>
+            </div>
+            <div class="board card">
+                <p style="visibility: hidden">s</p>
+                <img src="../static/figs/trump.png" alt="">
+                <p style="max-width: 255px; margin-bottom: 0px"> 如果想要添加新的工具,请联系: ybh1246821319@sjtu.edu.cn</p>
+            </div>
+            <div class="text card">
+                <h1>最热工具</h1>
+
+                <a class="text-col" href="./html/text.html">
+                    <img src="/static/figs/1.jpg" alt="">
+                    <div class="text-col-1">
+                        <p>NCBI BLAST</p>
+                        <p>序列比对</p>
+                    </div>
+                </a>
+
+                <a class="text-col" href="./html/text.html">
+                    <img src="/static/figs/test.png" alt="">
+                    <div class="text-col-1">
+                        <p>R graph gallery</p>
+                        <p>绘图</p>
+                    </div>
+                </a>
+
+                <a class="text-col" href="./html/text.html">
+                    <img src="/static/figs/6.png" alt="">
+                    <div class="text-col-1">
+                        <p>PDB</p>
+                        <p>数据库</p>
+                    </div>
+                </a>
+
+            </div>
+            <div class="classify card" style="height: 250px">
+                <div class="classify-title">
+                    <img class="label-img" src="../static/figs/wrench.png" alt="" style="margin-right: 5px;">
+                    <p style="margin-bottom: 0px">分类</p>
+                    <!-- <img class="label-img" src="./img/右箭头.png" alt="" style="margin-left: 183px;"> -->
+                </div>
+                <br/>
+                <div class="classify-content">
+                    <div class="classify-content-1">
+                        <p>序列比对</p>
+                        <p>1</p>
+                    </div>
+                    <div class="classify-content-1">
+                        <p>数据库</p>
+                        <p>2</p>
+                    </div>
+                    <div class="classify-content-1">
+                        <p>绘图</p>
+                        <p>1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {#    中间规划8#}
+    <div class="right" style="width: auto">
+
+        {#        {% for art in article_obj %}#}
+        <div class="col col-1 right-scroll" style="height: 250px">
+
+            <div class="col-imgMark" style="width: 430px;margin-right: 20px">
+                <a class="col-img a1" href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">
+                    <img class="media-object" src="/static/figs/1.jpg" alt="..."
+                         style="height: 250px ;width: 250px">
+                </a>
+            </div>
+
+            {#                <div class="col-imgMark" style="width: 50px">#}
+            {#                </div> #}
+
+            <div class="text-2">
+                <h2><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI BLAST</a></h2>
+                <div class="date">
+                    <img src="/static/assets/figs/日期.png" alt=""
+                         style="width: 19px;height: 19px;margin-right: 5px;">
+                    <p style="margin-bottom: 0px">分类: 序列比对</p>
+                    <div class="line">
+                    </div>
+                    <p style="margin-bottom: 0px"> NCBI 序列比对工具 </p>
+                </div>
+                <br>
+                <div class="Lrem">
+                    <p>基本局部比对搜索工具 (BLAST) 查找序列之间的局部相似区域。 该程序将核苷酸或蛋白质序列与序列数据库进行比较，并计算匹配的统计显着性。 BLAST 可用于推断序列之间的功能和进化关系，以及帮助识别基因家族的成员。 </p>
+                </div>
+
+                <div class="Lrem" style="height: 10px">
+                </div>
+
+            </div>
+
+            <div class="col-imgMark" style="width: 20px">
+            </div>
+
+        </div>
+
+        <div class="col col-1 right-scroll" style="height: 250px">
+
+            <div class="col-imgMark" style="width: 430px;margin-right: 20px">
+                <a class="col-img a1" href="https://www.rcsb.org/">
+                    <img class="media-object" src="/static/figs/6.png" alt="..."
+                         style="height: 250px ;width: 250px">
+                </a>
+            </div>
+
+            {#                <div class="col-imgMark" style="width: 50px">#}
+            {#                </div> #}
+
+            <div class="text-2">
+                <h2><a href="https://www.rcsb.org/">PDB</a></h2>
+                <div class="date">
+                    <img src="/static/assets/figs/日期.png" alt=""
+                         style="width: 19px;height: 19px;margin-right: 5px;">
+                    <p style="margin-bottom: 0px">分类: 数据库</p>
+                    <div class="line">
+                    </div>
+                    <p style="margin-bottom: 0px"> 蛋白质三级结构 </p>
+                </div>
+                <br>
+                <div class="Lrem">
+                    <p>美国Brookhaven实验室1971年建立的大分子数据库, 蛋白质大分子结构数据库. PDB数据库的维护由结构生物信息学合作组织(RCSB)负责.</p>
+                </div>
+
+                <div class="Lrem" style="height: 10px">
+                </div>
+
+            </div>
+
+            <div class="col-imgMark" style="width: 20px">
+            </div>
+
+        </div>
+
+        <div class="col col-1 right-scroll" style="height: 250px">
+
+            <div class="col-imgMark" style="width: 430px;margin-right: 20px">
+                <a class="col-img a1" href="https://www.uniprot.org/">
+                    <img class="media-object" src="/static/figs/4.jpg" alt="..."
+                         style="height: 250px ;width: 250px">
+                </a>
+            </div>
+
+            {#                <div class="col-imgMark" style="width: 50px">#}
+            {#                </div> #}
+
+            <div class="text-2">
+                <h2><a href="https://www.uniprot.org/">UniProt</a></h2>
+                <div class="date">
+                    <img src="/static/assets/figs/日期.png" alt=""
+                         style="width: 19px;height: 19px;margin-right: 5px;">
+                    <p style="margin-bottom: 0px">分类: 数据库</p>
+                    <div class="line">
+                    </div>
+                    <p style="margin-bottom: 0px"> 蛋白质序列数据库 </p>
+                </div>
+                <br>
+                <div class="Lrem">
+                    <p>Uniprot （Universal Protein ）是包含蛋白质序列，功能信息，研究论文索引的蛋白质数据库，整合了包括EBI（ European Bioinformatics Institute），SIB（the Swiss Institute of Bioinformatics），PIR（Protein Information Resource）三大数据库的资源。</p>
+                </div>
+
+                <div class="Lrem" style="height: 10px">
+                </div>
+
+            </div>
+
+
+
+            <div class="col-imgMark" style="width: 20px">
+            </div>
+
+        </div>
+
+        <div class="col col-1 right-scroll" style="height: 250px; width: 1000px;">
+
+            <div class="col-imgMark" style="width: 430px;margin-right: 20px">
+                <a class="col-img a1" href="http://www.r-graph-gallery.com/">
+                    <img class="media-object" src="/static/figs/test.png" alt="..."
+                         style="height: 250px ;width: 250px">
+                </a>
+            </div>
+
+            {#                <div class="col-imgMark" style="width: 50px">#}
+            {#                </div> #}
+
+            <div class="text-2">
+                <h2><a href="http://www.r-graph-gallery.com/">The R graph gallery</a></h2>
+                <div class="date">
+                    <img src="/static/assets/figs/日期.png" alt=""
+                         style="width: 19px;height: 19px;margin-right: 5px;">
+                    <p style="margin-bottom: 0px">分类: 绘图</p>
+                    <div class="line">
+                    </div>
+                    <p style="margin-bottom: 0px"> 生物数据绘图模板库 </p>
+                </div>
+                <br>
+                <div class="Lrem">
+                    <p> The R graph gallery是一个R图形库，这是使用 R 编程语言制作的图表集合。 数以百计的图表显示在几个部分中，始终提供可重现的代码。 画廊专注于 tidyverse 和 ggplot2。 </p>
+                </div>
+
+                <div class="Lrem" style="height: 10px">
+                </div>
+
+            </div>
+
+
+
+            <div class="col-imgMark" style="width: 20px">
+            </div>
+
+        </div>
+    </div>
+
+
+
+        {#        {% endfor %}#}
+
+        {#        <div class="col col-1 right-scroll" style="height: 250px">#}
+        {##}
+        {#            <div class="col-imgMark">#}
+        {#                <a class="col-img a1" href="/templates/onself.html">#}
+        {#                    <img src="/static/assets/figs/2-textImg.png" alt="" style="height: 320px;width: 300px">#}
+        {#                </a>#}
+        {#            </div>#}
+        {##}
+        {#            <div class="col-imgMark" style="width: 50px">#}
+        {#            </div>#}
+        {##}
+        {#            <div class="text-2">#}
+        {#                <a href="./html/01text.html"><h1>数据代理</h1></a>#}
+        {#                <div class="date">#}
+        {#                    <img src="/static/assets/figs/日期.png" alt=""#}
+        {#                         style="width: 19px;height: 19px;margin-right: 5px;">#}
+        {#                    <p>发布于：2021-09-01</p>#}
+        {#                    <div class="line"></div>#}
+        {#                    <p>JavaScript</p>#}
+        {#                    <div class="line"></div>#}
+        {#                    <p>ES6</p>#}
+        {#                </div>#}
+        {#                <div class="Lrem">Object.defineProperty() 方法会直接在一个对象上定义一个新属性，#}
+        {#                    或者修改一个对象的现有属性，并返回此对象。#}
+        {#                    语法：Object.defineProperty(obj, prop, descriptor)#}
+        {#                </div>#}
+        {#            </div>#}
+        {##}
+        {#            <div class="col-imgMark" style="width: 20px">#}
+        {#            </div>#}
+        {#        </div>#}
+
+        <div style="height: 30px">
+        </div>
+
+        {#        </div>#}
+    </div>
+
+    {#    右侧规划2#}
+    {#<div class="col-xs-2 col-sm-2">#}
+    {#    <div class="panel panel-primary">#}
+    {#        <div class="panel-heading">待修改</div>#}
+    {#        <div class="panel-body">#}
+    {#            待修改#}
+    {#        </div>#}
+    {#    </div>#}
+    {#    <div class="panel panel-primary">#}
+    {#        <div class="panel-heading">待修改</div>#}
+    {#        <div class="panel-body">#}
+    {#            待修改#}
+    {#        </div>#}
+    {#    </div>#}
+    {#</div>#}
+
+
+</section>
+
+<footer>
+    <div id="ybh_footer">
+        <p>@2021-2022 姜戈 颜秉浩 顾睿初</p>
+        <p>Bioinformatics | 生信之家</p>
+        <p>亲爱的你, 欢迎来到温暖的生信之家!</p>
+    </div>
+</footer>
+
+<script src="/static/jquery-3.3.1.js"></script>
+<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="/static/sweetalert.min.js"></script>
+<script src="/static/AjaxPostPatch.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/static/assets/script/blog.js"></script>
+<script src="/static/assets/script/scroll.js"></script>
+<script>
+    passage_total = document.getElementsByClassName("text-2")
+    passage_num = document.getElementById("passage")
+    passage_num.textContent = passage_total.length
+
+</script>
+</body>
+</html>
